@@ -20,7 +20,7 @@ jobs:
       with:
         dotnet-version: 3.1.408
         
-        -name: download backup
+        name: download backup
         run: |
         
           Git config --global user.email "thabanglwazi@gmail.com"
