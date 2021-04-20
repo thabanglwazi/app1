@@ -24,8 +24,8 @@ jobs:
         run: |
         
           Git config --global user.email "thabanglwazi@gmail.com"
-          PS C:\github> Git config --global user.name "thabanglwazi"
-          PS C:\github> git clone https://github.com/thabanglwazi/app1.git new-site
+          PS C:\> Git config --global user.name "thabanglwazi"
+          PS C:\> git clone https://github.com/thabanglwazi/app1.git 
         
         shell: pwsh
         
