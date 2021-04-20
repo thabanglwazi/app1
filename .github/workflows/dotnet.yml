@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1
+        dotnet-version: 3.1.408
         
         -name: download backup
         run: |
@@ -26,12 +26,8 @@ jobs:
           Git config --global user.email "thabanglwazi@gmail.com"
           Git config --global user.name "thabanglwazi"
           git clone https://github.com/thabanglwazi/app1.git 
+          PS c:\> ls
         
         shell: pwsh
         
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    
