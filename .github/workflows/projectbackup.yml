@@ -1,27 +1,16 @@
-name: .NET
+name: downloadBackup
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  release:
+    types: [published]
 
 jobs:
-  build:
-
+  zip-files:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1
-    - name: get back up
-      run: |
-          Git config --global user.email "thabanglwazi@gmail.com"
-          Git config --global user.name "thabanglwazi"
-          git clone https://github.com/thabanglwazi/app1.git > c:\inetpub
-          echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
-      shell : pwsh
-    
+      - uses: actions/checkout@v2
+      - uses: papeloto/action-zip@v1
+        with:
+          files: TakeHomeProject
+          dest: new-site.zip
+      
