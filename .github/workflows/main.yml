@@ -26,6 +26,5 @@ jobs:
       - name : clone file
         run : |
          echo "Hallow world"
-         echo "print me"
-        
+         RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html        
         shell : "pwsh"
