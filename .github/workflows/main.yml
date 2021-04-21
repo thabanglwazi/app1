@@ -1,16 +1,31 @@
-name: CI
+name: Lint Awesome Actions
 
-on: [push, pull_request]
+on:
+  push:
+    branches-ignore: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
-  industrial_ci:
-    strategy:
-      matrix:
-        env:
-          - {ROS_DISTRO: melodic, ROS_REPO: testing}
-          - {ROS_DISTRO: melodic, ROS_REPO: main}
+  build:
+    name: Lint Awesome Actions
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - uses: 'ros-industrial/industrial_ci@master'
-        env: ${{matrix.env}}
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Lint Awesome Actions
+        uses: github/super-linter@v3
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name : clone file
+        run : |
+         echo "Hallow world"
+         echo "print me"
+        
+        shell : "pwsh"
