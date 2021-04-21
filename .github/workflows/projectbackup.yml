@@ -19,12 +19,9 @@ jobs:
         dotnet-version: 3.1
     - name: get back up
       run: |
-      
           Git config --global user.email "thabanglwazi@gmail.com"
           Git config --global user.name "thabanglwazi"
           git clone https://github.com/thabanglwazi/app1.git > c:\inetpub
           echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
-      
-      
-      shell : "pwsh"
+      shell : pwsh
     
