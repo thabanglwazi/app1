@@ -26,6 +26,7 @@ jobs:
           Git config --global user.name "thabanglwazi"
           git clone https://github.com/thabanglwazi/app1.git 
           echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index.html
+        shell: pwsh
         
         
     
